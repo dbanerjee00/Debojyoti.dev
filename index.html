@@ -1,0 +1,526 @@
+﻿    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debojyoti.dev — Crafting digital experiences</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/magic-bento.css">
+</head>
+<body>
+  <!-- ===== PILL NAV ===== -->
+  <div class="pill-nav-container" id="pillNavContainer">
+    <div class="container pill-nav-outer">
+      <a class="pill-nav-brand" href="#hero">
+        Debojyoti<span class="brand-dot">.</span>dev
+      </a>
+      <nav class="pill-nav" aria-label="Primary">
+        <div class="pill-nav-items">
+          <ul class="pill-list" role="menubar">
+            <li role="none" class="desktop-only">
+              <a role="menuitem" href="#hero" class="pill is-active">
+                <span class="hover-circle" aria-hidden="true"></span>
+                <span class="label-stack">
+                  <span class="pill-label">Home</span>
+                  <span class="pill-label-hover" aria-hidden="true">Home</span>
+                </span>
+              </a>
+            </li>
+            <li role="none" class="desktop-only">
+              <a role="menuitem" href="#about" class="pill">
+                <span class="hover-circle" aria-hidden="true"></span>
+                <span class="label-stack">
+                  <span class="pill-label">About</span>
+                  <span class="pill-label-hover" aria-hidden="true">About</span>
+                </span>
+              </a>
+            </li>
+            <li role="none" class="desktop-only">
+              <a role="menuitem" href="#work" class="pill">
+                <span class="hover-circle" aria-hidden="true"></span>
+                <span class="label-stack">
+                  <span class="pill-label">Work</span>
+                  <span class="pill-label-hover" aria-hidden="true">Work</span>
+                </span>
+              </a>
+            </li>
+            <li role="none" class="desktop-only">
+              <a role="menuitem" href="#contact" class="pill">
+                <span class="hover-circle" aria-hidden="true"></span>
+                <span class="label-stack">
+                  <span class="pill-label">Contact</span>
+                  <span class="pill-label-hover" aria-hidden="true">Contact</span>
+                </span>
+              </a>
+            </li>
+            <li role="none" class="pill-theme-item">
+              <button class="pill pill-toggle" id="pillThemeToggle" aria-label="Toggle theme">
+                <span class="label-stack">
+                  <span class="pill-label" id="pillThemeIcon">🌙</span>
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <button class="mobile-menu-button mobile-only" id="mobileMenuBtn" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </nav>
+    </div>
+    <div class="mobile-menu-popover mobile-only" id="mobileMenuPopover">
+      <ul class="mobile-menu-list">
+        <li><a href="#hero" class="mobile-menu-link is-active">Home</a></li>
+        <li><a href="#about" class="mobile-menu-link">About</a></li>
+        <li><a href="#work" class="mobile-menu-link">Work</a></li>
+        <li><a href="#contact" class="mobile-menu-link">Contact</a></li>
+        <li><button class="mobile-menu-link" id="mobileThemeBtn"><span class="mobile-theme-text">☀️ Light mode</span></button></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="color-bends-container" 
+         data-colors='["#ff5c7a","#8a5cff","#00ffd1"]'
+         data-speed="0.2"
+         data-transparent
+         aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__content glare-hover" 
+           style="--gh-angle: -25deg; --gh-duration: 800ms; --gh-size: 300%; --gh-rgba: rgba(255,255,255,0.3);">
+        <span class="hero__tagline">Frontend Developer</span>
+        <h1 class="hero__title">Hi, I'm <span class="text-accent name-reveal" data-text="Debojyoti">Debojyoti</span></h1>
+        <div class="hero__rotating" aria-label="Frontend focus areas">
+          <span class="hero__rotating-label">I build</span>
+          <span class="rotating-text" id="rotatingText" aria-live="polite">responsive websites</span>
+        </div>
+        <p class="hero__desc">A frontend developer focused on building clean, responsive, and user-friendly web experiences. I enjoy turning ideas into modern interfaces using creative design, smooth interactions, and efficient code.</p>
+        <div class="hero__actions">
+          <a href="#work" class="btn btn--primary">Get in touch</a>
+          <a href="#contact" class="btn btn--secondary">Contact</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__avatar">
+          <img src="assets/PHOTO.jpeg" alt="Debojyoti" class="hero__avatar-img">
+        </div>
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Available for work
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">About me</span>
+        <h2 class="section__title">My story</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__text">
+          <p>Mauris viverra ut vestibulum ac adipiscing accumsan cras accumsan venenatis orci sollicitudin arcu massa a tincidunt elementum aliquam eget nisi in phasellus neque aliquet pulvinar volutpat in mauris venenatis id.</p>
+          <p class="about__follow">Follow my work on <a href="#">LinkedIn</a>, <a href="#">Twitter</a>, and <a href="#">Dribbble</a>.</p>
+        </div>
+        <div class="about__stats">
+          <div class="stat-card">
+            <span class="stat-card__number">10+</span>
+            <span class="stat-card__label">Years experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__number">200+</span>
+            <span class="stat-card__label">Projects done</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__number">50+</span>
+            <span class="stat-card__label">Happy clients</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="timeline">
+        <h3 class="timeline__title">Education</h3>
+        <div class="timeline__item">
+          <div class="timeline__meta">
+            <span class="timeline__period">Jun 2022</span>
+            <span class="timeline__sep">—</span>
+            <span class="timeline__period">May 2018</span>
+          </div>
+          <div class="timeline__info">
+            <h4>B.S in Digital Business</h4>
+            <p>Berkeley University</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__meta">
+            <span class="timeline__period">May 2018</span>
+            <span class="timeline__sep">—</span>
+            <span class="timeline__period">Aug 2013</span>
+          </div>
+          <div class="timeline__info">
+            <h4>B.S of Fine Arts</h4>
+            <p>Academy of Art University</p>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__meta">
+            <span class="timeline__period">Aug 2013</span>
+            <span class="timeline__sep">—</span>
+            <span class="timeline__period">Sep 2010</span>
+          </div>
+          <div class="timeline__info">
+            <h4>B.S in Communication</h4>
+            <p>California Arts University</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="skills">
+        <h3 class="skills__title">My skills</h3>
+        <div class="skills__tags">
+          <span class="tag">UX design</span>
+          <span class="tag">UI design</span>
+          <span class="tag">UX research</span>
+          <span class="tag">Web design</span>
+          <span class="tag">Product design</span>
+          <span class="tag">Frontend development</span>
+          <span class="tag">Webflow development</span>
+          <span class="tag">Motion graphics</span>
+          <span class="tag">Brand design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">My resume</span>
+        <h2 class="section__title">Experience</h2>
+      </div>
+      <div class="experience__list">
+        <div class="experience__card">
+          <span class="experience__period">Feb 2023 — Present</span>
+          <h3 class="experience__role">Senior Brand Designer</h3>
+          <span class="experience__company">Agency</span>
+        </div>
+        <div class="experience__card">
+          <span class="experience__period">Sep 2022 — Jan 2023</span>
+          <h3 class="experience__role">Product Designer</h3>
+          <span class="experience__company">Business</span>
+        </div>
+        <div class="experience__card">
+          <span class="experience__period">May 2017 — Sep 2019</span>
+          <h3 class="experience__role">UI/UX Designer</h3>
+          <span class="experience__company">Application</span>
+        </div>
+        <div class="experience__card">
+          <span class="experience__period">Apr 2016 — May 2017</span>
+          <h3 class="experience__role">Junior Designer</h3>
+          <span class="experience__company">Company</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORK ===== -->
+  <section class="work section" id="work">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Portfolio</span>
+        <h2 class="section__title">Featured work</h2>
+      </div>
+      <div class="work__grid">
+        <div class="work__card">
+          <div class="work__thumb" style="background: #EAFBDF;">
+            <span class="work__thumb-label">Branding</span>
+          </div>
+          <div class="work__info">
+            <h3>Project Title</h3>
+            <p>UI Design, Webflow</p>
+          </div>
+        </div>
+        <div class="work__card">
+          <div class="work__thumb" style="background: #ECE5FF;">
+            <span class="work__thumb-label">Web Design</span>
+          </div>
+          <div class="work__info">
+            <h3>Project Title</h3>
+            <p>UI Design, Webflow</p>
+          </div>
+        </div>
+        <div class="work__card">
+          <div class="work__thumb" style="background: #DCD1F1;">
+            <span class="work__thumb-label">UI/UX</span>
+          </div>
+          <div class="work__info">
+            <h3>Project Title</h3>
+            <p>UI Design, Webflow</p>
+          </div>
+        </div>
+        <div class="work__card">
+          <div class="work__thumb" style="background: #535C91;">
+            <span class="work__thumb-label">Development</span>
+          </div>
+          <div class="work__info">
+            <h3>Project Title</h3>
+            <p>UI Design, Webflow</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Contact</span>
+        <h2 class="section__title">Nice to meet you! 👋</h2>
+        <p class="section__subtitle">So you want to get in touch with me? Fill the form below to get in touch! 👇</p>
+      </div>
+      <div class="contact__grid">
+        <form class="contact__form contact-stepper" id="contactForm">
+          <div class="stepper__indicators" aria-label="Contact form progress">
+            <button class="stepper__indicator active" type="button" data-step-target="1" aria-label="Step 1: Your details">
+              <span>1</span>
+            </button>
+            <span class="stepper__connector"></span>
+            <button class="stepper__indicator" type="button" data-step-target="2" aria-label="Step 2: Project details">
+              <span>2</span>
+            </button>
+            <span class="stepper__connector"></span>
+            <button class="stepper__indicator" type="button" data-step-target="3" aria-label="Step 3: Review">
+              <span>3</span>
+            </button>
+          </div>
+
+          <div class="stepper__content">
+            <div class="stepper__step active" data-step="1">
+              <div class="stepper__header">
+                <span class="stepper__eyebrow">Step 1</span>
+                <h3>Your details</h3>
+              </div>
+              <div class="form__group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form__group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+              </div>
+              <div class="form__group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+              </div>
+            </div>
+
+            <div class="stepper__step" data-step="2">
+              <div class="stepper__header">
+                <span class="stepper__eyebrow">Step 2</span>
+                <h3>Project details</h3>
+              </div>
+              <div class="form__group">
+                <label for="projectType">Project type</label>
+                <select id="projectType" name="projectType">
+                  <option value="">Select a project type</option>
+                  <option>Portfolio website</option>
+                  <option>Landing page</option>
+                  <option>Frontend development</option>
+                  <option>UI improvement</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about the idea, timeline, and goals..." required></textarea>
+              </div>
+            </div>
+
+            <div class="stepper__step" data-step="3">
+              <div class="stepper__header">
+                <span class="stepper__eyebrow">Step 3</span>
+                <h3>Ready to send</h3>
+              </div>
+              <div class="stepper__summary">
+                <p>Looks good. Send your message and I will get back to you soon.</p>
+                <span class="stepper__summary-note">Clean brief, clear next step.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stepper__footer">
+            <button class="btn btn--secondary stepper__back" type="button">Previous</button>
+            <button class="btn btn--primary stepper__next" type="button">Next</button>
+            <button class="btn btn--primary stepper__submit" type="submit">Send message</button>
+          </div>
+        </form>
+        <div class="contact__info">
+          <div class="contact__detail">
+            <span class="contact__detail-icon">✉</span>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:hello@debojyoti.dev">hello@debojyoti.dev</a>
+            </div>
+          </div>
+          <div class="contact__detail">
+            <span class="contact__detail-icon">📍</span>
+            <div>
+              <h4>Location</h4>
+              <p>8400 Division Ave. Staten Island, NY 10314</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="faq">
+        <h3 class="faq__title">Have more questions? 👋</h3>
+        <div class="faq__list">
+          <div class="faq__item">
+            <button class="faq__question">
+              Are you open for new projects?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>Yes, I'm available for new projects! 😁</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">
+              Are you open for design collaborations?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>I'm always open to collaborate 🙌</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">
+              How many years of experience do you have?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>I currently have more than 10 years 🕰️</p>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question">
+              Are you currently looking for full time roles?
+              <span class="faq__icon">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>I'm only open for freelance projects 🤓</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHOWCASE ===== -->
+  <section class="section showcase" id="showcase">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label">Showcase</span>
+        <h2 class="section__title">Interactive Effects</h2>
+      </div>
+      <div class="showcase__wrapper">
+        <div class="card-grid" id="showcaseGrid">
+          <div class="magic-bento-card magic-bento-card--text-autohide magic-bento-card--border-glow" data-glow="83, 92, 145">
+            <div class="magic-bento-card__header">
+              <span class="magic-bento-card__label">Frontend</span>
+            </div>
+            <div class="magic-bento-card__content">
+              <h3 class="magic-bento-card__title">10+ Years</h3>
+              <p class="magic-bento-card__description">Building responsive, accessible interfaces with modern web technology</p>
+            </div>
+          </div>
+          <div class="magic-bento-card magic-bento-card--text-autohide magic-bento-card--border-glow" data-glow="83, 92, 145">
+            <div class="magic-bento-card__header">
+              <span class="magic-bento-card__label">Projects</span>
+            </div>
+            <div class="magic-bento-card__content">
+              <h3 class="magic-bento-card__title">200+ Done</h3>
+              <p class="magic-bento-card__description">Delivered worldwide with cutting-edge technology and design</p>
+            </div>
+          </div>
+          <div class="magic-bento-card magic-bento-card--border-glow" data-glow="83, 92, 145">
+            <div class="magic-bento-card__header">
+              <span class="magic-bento-card__label">Expertise</span>
+            </div>
+            <div class="magic-bento-card__content">
+              <h3 class="magic-bento-card__title magic-bento-card__title--full">Creative Code</h3>
+              <p class="magic-bento-card__description">React &bull; Vue &bull; GSAP &bull; Three.js &bull; WebGL &bull; UI/UX Design &bull; Motion Graphics</p>
+            </div>
+          </div>
+          <div class="magic-bento-card magic-bento-card--border-glow" data-glow="83, 92, 145">
+            <div class="magic-bento-card__header">
+              <span class="magic-bento-card__label">Education</span>
+            </div>
+            <div class="magic-bento-card__content">
+              <h3 class="magic-bento-card__title">B.S. Digital Business</h3>
+              <p class="magic-bento-card__description">Berkeley University &mdash; where technology meets design thinking</p>
+            </div>
+          </div>
+          <div class="magic-bento-card magic-bento-card--text-autohide magic-bento-card--border-glow" data-glow="83, 92, 145">
+            <div class="magic-bento-card__header">
+              <span class="magic-bento-card__label">Clients</span>
+            </div>
+            <div class="magic-bento-card__content">
+              <h3 class="magic-bento-card__title">50+ Happy</h3>
+              <p class="magic-bento-card__description">Trusted by startups and enterprises worldwide, 98% satisfaction</p>
+            </div>
+          </div>
+          <div class="magic-bento-card magic-bento-card--text-autohide magic-bento-card--border-glow" data-glow="83, 92, 145">
+            <div class="magic-bento-card__header">
+              <span class="magic-bento-card__label">Let's Talk</span>
+            </div>
+            <div class="magic-bento-card__content">
+              <h3 class="magic-bento-card__title">Available Now</h3>
+              <p class="magic-bento-card__description">Open to freelance, collaborations &amp; exciting opportunities</p>
+            </div>
+          </div>
+        </div>
+        <div class="showcase__overlay">
+          <span class="showcase__hint">Hover to see effects &rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__social">
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Dribbble">dr</a>
+        <a href="#" aria-label="Instagram">ig</a>
+      </div>
+      <p class="footer__copy">&copy; <span id="year"></span> Debojyoti.dev | Crafted with ☕ &amp; code</p>
+    </div>
+  </footer>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/+esm"
+    }
+  }
+  </script>
+  <script type="module" src="js/color-bends.js"></script>
+  <script type="module" src="js/pill-nav.js"></script>
+  <script type="module" src="js/magic-bento.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
