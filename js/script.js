@@ -1,98 +1,6 @@
 (function () {
   'use strict';
 
-  // ---- Creative cursor tracker ----
-  var creativeCursor = document.createElement('div');
-  creativeCursor.className = 'creative-cursor';
-  creativeCursor.innerHTML =
-    '<span class="creative-cursor__ring"></span>' +
-    '<span class="creative-cursor__dot"></span>' +
-    '<span class="creative-cursor__spark"></span>' +
-    '<span class="creative-cursor__spark"></span>' +
-    '<span class="creative-cursor__spark"></span>';
-  document.body.appendChild(creativeCursor);
-  document.body.classList.add('creative-cursor-enabled');
-
-  var cursorDot = creativeCursor.querySelector('.creative-cursor__dot');
-  var cursorRing = creativeCursor.querySelector('.creative-cursor__ring');
-  var cursorSparks = Array.prototype.slice.call(creativeCursor.querySelectorAll('.creative-cursor__spark'));
-  var interactiveSelector = 'a, button, input, select, textarea, .work__card, .faq__question, .stepper__indicator';
-  var cursorX = window.innerWidth / 2;
-  var cursorY = window.innerHeight / 2;
-  var targetCursorX = cursorX;
-  var targetCursorY = cursorY;
-  var sparkPoints = cursorSparks.map(function () {
-    return { x: cursorX, y: cursorY };
-  });
-
-  function cursorLerp(start, end, amount) {
-    return start + (end - start) * amount;
-  }
-
-  function updateCreativeTarget(element) {
-    var isTarget = Boolean(element && element.closest && element.closest(interactiveSelector));
-    creativeCursor.classList.toggle('is-target', isTarget);
-  }
-
-  function moveCreativeCursor(x, y, element) {
-    targetCursorX = x;
-    targetCursorY = y;
-    updateCreativeTarget(element || document.elementFromPoint(x, y));
-  }
-
-  function renderCreativeCursor() {
-    cursorX = cursorLerp(cursorX, targetCursorX, 0.24);
-    cursorY = cursorLerp(cursorY, targetCursorY, 0.24);
-    creativeCursor.style.transform = 'translate3d(' + cursorX + 'px, ' + cursorY + 'px, 0)';
-
-    cursorSparks.forEach(function (spark, index) {
-      var previous = index === 0 ? { x: cursorX, y: cursorY } : sparkPoints[index - 1];
-      sparkPoints[index].x = cursorLerp(sparkPoints[index].x, previous.x, 0.18 - index * 0.035);
-      sparkPoints[index].y = cursorLerp(sparkPoints[index].y, previous.y, 0.18 - index * 0.035);
-      var size = 7 - index * 1.3;
-      spark.style.width = size + 'px';
-      spark.style.height = size + 'px';
-      spark.style.opacity = String(0.42 - index * 0.1);
-      spark.style.transform =
-        'translate(' + (sparkPoints[index].x - cursorX - size / 2) + 'px, ' + (sparkPoints[index].y - cursorY - size / 2) + 'px)';
-    });
-
-    cursorRing.style.transform = 'translate(-50%, -50%) rotate(' + (Date.now() * 0.04) + 'deg)';
-    cursorDot.style.transform = creativeCursor.classList.contains('is-pressed')
-      ? 'translate(-50%, -50%) scale(0.78)'
-      : 'translate(-50%, -50%) scale(1)';
-
-    requestAnimationFrame(renderCreativeCursor);
-  }
-
-  window.addEventListener('pointermove', function (event) {
-    moveCreativeCursor(event.clientX, event.clientY, event.target);
-  });
-
-  window.addEventListener('touchstart', function (event) {
-    if (!event.touches.length) return;
-    moveCreativeCursor(event.touches[0].clientX, event.touches[0].clientY);
-  }, { passive: true });
-
-  window.addEventListener('touchmove', function (event) {
-    if (!event.touches.length) return;
-    moveCreativeCursor(event.touches[0].clientX, event.touches[0].clientY);
-  }, { passive: true });
-
-  window.addEventListener('scroll', function () {
-    updateCreativeTarget(document.elementFromPoint(targetCursorX, targetCursorY));
-  }, { passive: true });
-
-  window.addEventListener('pointerdown', function () {
-    creativeCursor.classList.add('is-pressed');
-  });
-
-  window.addEventListener('pointerup', function () {
-    creativeCursor.classList.remove('is-pressed');
-  });
-
-  renderCreativeCursor();
-
   // ---- Hero rotating text ----
   var rotatingText = document.getElementById('rotatingText');
   var rotatingWords = [
@@ -205,12 +113,23 @@
   });
 
   // ---- Scroll reveal animation ----
-  var revealEls = document.querySelectorAll(
-    '.section, .work__card, .experience__card, .about__stats, .timeline, .skills, .contact__grid, .faq'
-  );
+  var revealObserver;
+  var revealSelector = '.section, .work__card, .experience__card, .about__stats, .timeline, .skills, .contact__grid, .faq';
 
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(
+  function initRevealObserver() {
+    if (revealObserver) {
+      revealObserver.disconnect();
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll(revealSelector).forEach(function (el) {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      });
+      return;
+    }
+
+    revealObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -222,16 +141,18 @@
       { threshold: 0.08 }
     );
 
-    revealEls.forEach(function (el) {
+    var activePage = document.querySelector('.page.active') || document;
+    var els = activePage.querySelectorAll(revealSelector);
+
+    els.forEach(function (el) {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
-  } else {
-    revealEls.forEach(function (el) {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
+      revealObserver.observe(el);
     });
   }
+
+  initRevealObserver();
+
+  window.addEventListener('pagechange', initRevealObserver);
 })();

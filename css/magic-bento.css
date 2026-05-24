@@ -18,7 +18,7 @@
   overflow: hidden;
   transition: background 0.3s;
   will-change: transform;
-  cursor: default;
+  cursor: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -234,42 +234,4 @@
   }
 }
 
-/* ============================================
-   SHOWCASE SECTION — frosted blur overlay
-   ============================================ */
-.showcase__wrapper {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-}
 
-.showcase__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
-}
-
-.showcase__hint {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text-primary);
-  background: var(--neutral-300);
-  padding: 14px 28px;
-  border-radius: 100px;
-  opacity: 0.7;
-  transition: opacity 0.3s;
-  border: 1px solid var(--neutral-400);
-  box-shadow: var(--shadow-md);
-}
-
-.showcase__overlay:hover .showcase__hint {
-  opacity: 1;
-}
