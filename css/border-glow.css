@@ -139,3 +139,19 @@
   overflow: auto;
   z-index: 1;
 }
+
+/* Theme Integration for Border Glow Cards */
+[data-theme="dark"] .border-glow-card {
+  --card-bg: rgba(27, 26, 85, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: rgba(146, 144, 195, 0.12);
+}
+
+[data-theme="light"] .border-glow-card {
+  --card-bg: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: rgba(146, 144, 195, 0.18);
+}
+

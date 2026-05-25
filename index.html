@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="css/magic-bento.css">
   <link rel="stylesheet" href="css/custom-hero-card.css">
   <link rel="stylesheet" href="css/border-glow.css">
+  <link rel="stylesheet" href="css/dot-grid.css">
+  <link rel="stylesheet" href="css/logo-loop.css">
 </head>
 <body>
   <!-- ===== HEADER ===== -->
@@ -84,7 +86,7 @@
     <!-- PAGE: Home -->
     <div class="page active" data-page="home">
       <section class="hero" id="hero">
-        <div class="hero__grid-overlay"></div>
+        <div id="hero-dot-grid" class="dot-grid-container"></div>
         <div class="hero__glow-1"></div>
         <div class="hero__glow-2"></div>
         <div class="container hero__inner">
@@ -228,17 +230,26 @@
               <p class="about__follow">Follow my work on <a href="#">LinkedIn</a>, <a href="#">Twitter</a>, and <a href="#">Dribbble</a>.</p>
             </div>
             <div class="about__stats">
-              <div class="stat-card">
-                <span class="stat-card__number">10+</span>
-                <span class="stat-card__label">Years experience</span>
+              <div class="stat-card border-glow-card" data-edge-sensitivity="30" data-glow-color="260 80 80" data-border-radius="20" data-glow-radius="25" data-glow-intensity="1.0" data-cone-spread="25" data-animated="false" data-colors="#c084fc, #f472b6, #38bdf8">
+                <span class="edge-light"></span>
+                <div class="border-glow-inner">
+                  <span class="stat-card__number">10+</span>
+                  <span class="stat-card__label">Years experience</span>
+                </div>
               </div>
-              <div class="stat-card">
-                <span class="stat-card__number">200+</span>
-                <span class="stat-card__label">Projects done</span>
+              <div class="stat-card border-glow-card" data-edge-sensitivity="30" data-glow-color="260 80 80" data-border-radius="20" data-glow-radius="25" data-glow-intensity="1.0" data-cone-spread="25" data-animated="false" data-colors="#c084fc, #f472b6, #38bdf8">
+                <span class="edge-light"></span>
+                <div class="border-glow-inner">
+                  <span class="stat-card__number">200+</span>
+                  <span class="stat-card__label">Projects done</span>
+                </div>
               </div>
-              <div class="stat-card">
-                <span class="stat-card__number">50+</span>
-                <span class="stat-card__label">Happy clients</span>
+              <div class="stat-card border-glow-card" data-edge-sensitivity="30" data-glow-color="260 80 80" data-border-radius="20" data-glow-radius="25" data-glow-intensity="1.0" data-cone-spread="25" data-animated="false" data-colors="#c084fc, #f472b6, #38bdf8">
+                <span class="edge-light"></span>
+                <div class="border-glow-inner">
+                  <span class="stat-card__number">50+</span>
+                  <span class="stat-card__label">Happy clients</span>
+                </div>
               </div>
             </div>
           </div>
@@ -293,6 +304,15 @@
               <span class="tag">Motion graphics</span>
               <span class="tag">Brand design</span>
             </div>
+            <!-- Tech logo marquee — dual row -->
+            <div class="logo-loop-wrapper" aria-label="Technologies I work with" role="region">
+              <div class="logo-loop logo-loop--forward">
+                <div class="logo-loop__track" aria-hidden="true"></div>
+              </div>
+              <div class="logo-loop logo-loop--reverse">
+                <div class="logo-loop__track" aria-hidden="true"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -304,25 +324,37 @@
             <h2 class="section__title">Experience</h2>
           </div>
           <div class="experience__list">
-              <div class="experience__card">
-                <span class="experience__period">Feb 2023 — Present</span>
-                <h3 class="experience__role">Senior Brand Designer</h3>
-                <span class="experience__company">Creative Agency</span>
+              <div class="experience__card border-glow-card" data-edge-sensitivity="30" data-glow-color="260 80 80" data-border-radius="16" data-glow-radius="25" data-glow-intensity="1.0" data-cone-spread="25" data-animated="false" data-colors="#c084fc, #f472b6, #38bdf8">
+                <span class="edge-light"></span>
+                <div class="border-glow-inner">
+                  <span class="experience__period">Feb 2023 — Present</span>
+                  <h3 class="experience__role">Senior Brand Designer</h3>
+                  <span class="experience__company">Creative Agency</span>
+                </div>
               </div>
-              <div class="experience__card">
-                <span class="experience__period">Sep 2022 — Jan 2023</span>
-                <h3 class="experience__role">Product Designer</h3>
-                <span class="experience__company">Tech Startup</span>
+              <div class="experience__card border-glow-card" data-edge-sensitivity="30" data-glow-color="260 80 80" data-border-radius="16" data-glow-radius="25" data-glow-intensity="1.0" data-cone-spread="25" data-animated="false" data-colors="#c084fc, #f472b6, #38bdf8">
+                <span class="edge-light"></span>
+                <div class="border-glow-inner">
+                  <span class="experience__period">Sep 2022 — Jan 2023</span>
+                  <h3 class="experience__role">Product Designer</h3>
+                  <span class="experience__company">Tech Startup</span>
+                </div>
               </div>
-              <div class="experience__card">
-                <span class="experience__period">May 2017 — Sep 2019</span>
-                <h3 class="experience__role">UI/UX Designer</h3>
-                <span class="experience__company">SaaS Company</span>
+              <div class="experience__card border-glow-card" data-edge-sensitivity="30" data-glow-color="260 80 80" data-border-radius="16" data-glow-radius="25" data-glow-intensity="1.0" data-cone-spread="25" data-animated="false" data-colors="#c084fc, #f472b6, #38bdf8">
+                <span class="edge-light"></span>
+                <div class="border-glow-inner">
+                  <span class="experience__period">May 2017 — Sep 2019</span>
+                  <h3 class="experience__role">UI/UX Designer</h3>
+                  <span class="experience__company">SaaS Company</span>
+                </div>
               </div>
-              <div class="experience__card">
-                <span class="experience__period">Apr 2016 — May 2017</span>
-                <h3 class="experience__role">Junior Designer</h3>
-                <span class="experience__company">Design Studio</span>
+              <div class="experience__card border-glow-card" data-edge-sensitivity="30" data-glow-color="260 80 80" data-border-radius="16" data-glow-radius="25" data-glow-intensity="1.0" data-cone-spread="25" data-animated="false" data-colors="#c084fc, #f472b6, #38bdf8">
+                <span class="edge-light"></span>
+                <div class="border-glow-inner">
+                  <span class="experience__period">Apr 2016 — May 2017</span>
+                  <h3 class="experience__role">Junior Designer</h3>
+                  <span class="experience__company">Design Studio</span>
+                </div>
               </div>
           </div>
         </div>
@@ -572,6 +604,8 @@
   <script type="module" src="js/magic-bento.js"></script>
   <script type="module" src="js/custom-hero-card.js"></script>
   <script type="module" src="js/border-glow.js"></script>
+  <script type="module" src="js/dot-grid.js"></script>
+  <script type="module" src="js/logo-loop.js"></script>
   <script src="js/script.js"></script>
   <script src="js/page-router.js"></script>
 </body>

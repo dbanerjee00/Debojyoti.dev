@@ -83,7 +83,7 @@ export function initBorderGlow(element) {
   // Extract attributes or use defaults
   const edgeSensitivity = parseFloat(card.dataset.edgeSensitivity) || 30;
   const glowColor = card.dataset.glowColor || '40 80 80';
-  const backgroundColor = card.dataset.backgroundColor || '#120F17';
+  const backgroundColor = card.dataset.backgroundColor;
   const borderRadius = parseFloat(card.dataset.borderRadius) || 28;
   const glowRadius = parseFloat(card.dataset.glowRadius) || 40;
   const glowIntensity = parseFloat(card.dataset.glowIntensity) || 1.0;
@@ -97,7 +97,9 @@ export function initBorderGlow(element) {
   }
 
   // Set static CSS vars
-  card.style.setProperty('--card-bg', backgroundColor);
+  if (backgroundColor) {
+    card.style.setProperty('--card-bg', backgroundColor);
+  }
   card.style.setProperty('--edge-sensitivity', edgeSensitivity);
   card.style.setProperty('--border-radius', `${borderRadius}px`);
   card.style.setProperty('--glow-padding', `${glowRadius}px`);
