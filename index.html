@@ -1,4 +1,4 @@
-﻿    <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,9 +6,11 @@
   <title>Debojyoti.dev — Crafting digital experiences</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/magic-bento.css">
+  <link rel="stylesheet" href="css/custom-hero-card.css">
+  <link rel="stylesheet" href="css/border-glow.css">
 </head>
 <body>
   <!-- ===== HEADER ===== -->
@@ -82,10 +84,16 @@
     <!-- PAGE: Home -->
     <div class="page active" data-page="home">
       <section class="hero" id="hero">
+        <div class="hero__grid-overlay"></div>
+        <div class="hero__glow-1"></div>
+        <div class="hero__glow-2"></div>
         <div class="container hero__inner">
           <div class="hero__content glare-hover" 
                style="--gh-angle: -25deg; --gh-duration: 800ms; --gh-size: 300%; --gh-rgba: rgba(255,255,255,0.3);">
-            <span class="hero__tagline">Frontend Developer</span>
+            <div class="hero__tagline-badge">
+              <span class="pulse-dot"></span>
+              <span class="hero__tagline-text">Available for new opportunities</span>
+            </div>
             <h1 class="hero__title">Hi, I'm <span class="text-accent name-reveal" data-text="Debojyoti">Debojyoti</span></h1>
             <div class="hero__rotating" aria-label="Frontend focus areas">
               <span class="hero__rotating-label">I build</span>
@@ -97,36 +105,24 @@
               <a href="/contact" class="btn btn--secondary" data-page="contact">Contact</a>
             </div>
           </div>
-          <div class="pc-card-wrapper" id="profileCard">
-            <div class="pc-behind" id="pcBehind"></div>
-            <div class="pc-card-shell" id="pcCardShell">
-              <section class="pc-card">
-                <div class="pc-inside">
-                  <div class="pc-shine"></div>
-                  <div class="pc-glare"></div>
-                  <div class="pc-content pc-avatar-content">
-                    <img class="avatar" src="assets/PHOTO.jpeg" alt="Debojyoti" loading="lazy">
-                    <div class="pc-user-info">
-                      <div class="pc-user-details">
-                        <div class="pc-mini-avatar">
-                          <img src="assets/PHOTO.jpeg" alt="Debojyoti">
-                        </div>
-                        <div class="pc-user-text">
-                          <div class="pc-handle">@debojyoti</div>
-                          <div class="pc-status">Open to work</div>
-                        </div>
-                      </div>
-                      <button class="pc-contact-btn" data-page="contact" type="button">Contact</button>
+          <div class="custom-hero-wrapper">
+            <div class="custom-hero-orb"></div>
+            <div class="custom-hero-shell">
+              <div class="custom-hero-card">
+                <div class="custom-hero-glare"></div>
+                <div class="custom-hero-content">
+                  <div class="border-glow-card custom-hero-avatar-glow" data-edge-sensitivity="30" data-glow-color="40 80 80" data-background-color="#120F17" data-border-radius="28" data-glow-radius="40" data-glow-intensity="1.0" data-cone-spread="25" data-animated="true">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner" style="width: 100%; height: 100%; overflow: hidden; border-radius: 28px;">
+                      <img src="assets/PHOTO.jpeg" alt="Debojyoti" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
                   </div>
-                  <div class="pc-content">
-                    <div class="pc-details">
-                      <h3>Debojyoti</h3>
-                      <p>Frontend Developer</p>
-                    </div>
+                  <div class="custom-hero-info">
+                    <h2>Debojyoti</h2>
+                    <p>Creative Developer</p>
                   </div>
                 </div>
-              </section>
+              </div>
             </div>
           </div>
         </div>
@@ -140,31 +136,43 @@
           </div>
           <div class="showcase__wrapper">
             <div class="card-grid" id="showcaseGrid">
-              <div class="magic-bento-card magic-bento-card--text-autohide magic-bento-card--border-glow" data-glow="83, 92, 145">
+              <div class="magic-bento-card magic-bento-card--border-glow" data-glow="83, 92, 145">
                 <div class="magic-bento-card__header">
-                  <span class="magic-bento-card__label">Frontend</span>
+                  <span class="magic-bento-card__label">Experience</span>
                 </div>
                 <div class="magic-bento-card__content">
-                  <h3 class="magic-bento-card__title">10+ Years</h3>
+                  <div class="bento-stat-num">10+</div>
+                  <div class="bento-stat-title">Years Crafting</div>
                   <p class="magic-bento-card__description">Building responsive, accessible interfaces with modern web technology</p>
-                </div>
-              </div>
-              <div class="magic-bento-card magic-bento-card--text-autohide magic-bento-card--border-glow" data-glow="83, 92, 145">
-                <div class="magic-bento-card__header">
-                  <span class="magic-bento-card__label">Projects</span>
-                </div>
-                <div class="magic-bento-card__content">
-                  <h3 class="magic-bento-card__title">200+ Done</h3>
-                  <p class="magic-bento-card__description">Delivered worldwide with cutting-edge technology and design</p>
                 </div>
               </div>
               <div class="magic-bento-card magic-bento-card--border-glow" data-glow="83, 92, 145">
                 <div class="magic-bento-card__header">
-                  <span class="magic-bento-card__label">Expertise</span>
+                  <span class="magic-bento-card__label">Completed</span>
+                </div>
+                <div class="magic-bento-card__content">
+                  <div class="bento-stat-num">200+</div>
+                  <div class="bento-stat-title">Projects Shipped</div>
+                  <p class="magic-bento-card__description">Delivered worldwide with cutting-edge technology and pixel-perfection</p>
+                </div>
+              </div>
+              <div class="magic-bento-card magic-bento-card--border-glow" data-glow="83, 92, 145">
+                <div class="magic-bento-card__header">
+                  <span class="magic-bento-card__label">Tech Stack</span>
                 </div>
                 <div class="magic-bento-card__content">
                   <h3 class="magic-bento-card__title magic-bento-card__title--full">Creative Code</h3>
-                  <p class="magic-bento-card__description">React &bull; Vue &bull; GSAP &bull; Three.js &bull; WebGL &bull; UI/UX Design &bull; Motion Graphics</p>
+                  <div class="bento-tag-cloud">
+                    <span class="bento-tag">React</span>
+                    <span class="bento-tag">Vue</span>
+                    <span class="bento-tag">Three.js</span>
+                    <span class="bento-tag">GSAP</span>
+                    <span class="bento-tag">WebGL</span>
+                    <span class="bento-tag">UI/UX</span>
+                    <span class="bento-tag">Motion</span>
+                    <span class="bento-tag">CSS Grid</span>
+                  </div>
+                  <p class="magic-bento-card__description">Harnessing design system patterns and micro-animations to wow users at first glance.</p>
                 </div>
               </div>
               <div class="magic-bento-card magic-bento-card--border-glow" data-glow="83, 92, 145">
@@ -172,26 +180,32 @@
                   <span class="magic-bento-card__label">Education</span>
                 </div>
                 <div class="magic-bento-card__content">
+                  <div class="bento-edu-meta">Berkeley University</div>
                   <h3 class="magic-bento-card__title">B.S. Digital Business</h3>
-                  <p class="magic-bento-card__description">Berkeley University &mdash; where technology meets design thinking</p>
+                  <p class="magic-bento-card__description">Bridging the gap between cutting-edge technology and human-centric design thinking.</p>
                 </div>
               </div>
-              <div class="magic-bento-card magic-bento-card--text-autohide magic-bento-card--border-glow" data-glow="83, 92, 145">
+              <div class="magic-bento-card magic-bento-card--border-glow" data-glow="83, 92, 145">
                 <div class="magic-bento-card__header">
-                  <span class="magic-bento-card__label">Clients</span>
+                  <span class="magic-bento-card__label">Satisfaction</span>
                 </div>
                 <div class="magic-bento-card__content">
-                  <h3 class="magic-bento-card__title">50+ Happy</h3>
-                  <p class="magic-bento-card__description">Trusted by startups and enterprises worldwide, 98% satisfaction</p>
+                  <div class="bento-stat-num">50+</div>
+                  <div class="bento-stat-title">Happy Clients</div>
+                  <p class="magic-bento-card__description">Trusted by startups and global enterprises with a 98% satisfaction rate.</p>
                 </div>
               </div>
-              <div class="magic-bento-card magic-bento-card--text-autohide magic-bento-card--border-glow" data-glow="83, 92, 145">
+              <div class="magic-bento-card magic-bento-card--border-glow bento-card--collaborate" data-glow="83, 92, 145">
                 <div class="magic-bento-card__header">
-                  <span class="magic-bento-card__label">Let's Talk</span>
+                  <span class="magic-bento-card__label">Status</span>
                 </div>
                 <div class="magic-bento-card__content">
-                  <h3 class="magic-bento-card__title">Available Now</h3>
-                  <p class="magic-bento-card__description">Open to freelance, collaborations &amp; exciting opportunities</p>
+                  <div class="bento-pulse-badge">
+                    <span class="bento-pulse-dot"></span>
+                    <span class="bento-pulse-text">AVAILABLE NOW</span>
+                  </div>
+                  <h3 class="magic-bento-card__title">Let's Collaborate</h3>
+                  <p class="magic-bento-card__description">Open for freelance projects, design system consultations, and exciting contracts.</p>
                 </div>
               </div>
             </div>
@@ -555,8 +569,9 @@
   }
   </script>
   <script type="module" src="js/pill-nav.js"></script>
-  <script type="module" src="js/profile-card.js"></script>
   <script type="module" src="js/magic-bento.js"></script>
+  <script type="module" src="js/custom-hero-card.js"></script>
+  <script type="module" src="js/border-glow.js"></script>
   <script src="js/script.js"></script>
   <script src="js/page-router.js"></script>
 </body>

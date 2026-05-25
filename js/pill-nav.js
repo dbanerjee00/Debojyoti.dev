@@ -90,6 +90,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function handleLeave(i) {
+    var pill = pills[i];
+    if (pill && pill.classList.contains('is-active')) {
+      return; // Do not reverse active pill animation when mouse leaves
+    }
     var tl = timelines[i];
     if (!tl) return;
     if (activeTweens[i]) activeTweens[i].kill();
@@ -97,6 +101,31 @@ document.addEventListener('DOMContentLoaded', function () {
       duration: 0.2,
       ease: ease,
       overwrite: 'auto'
+    });
+  }
+
+  function updateActivePill() {
+    pills.forEach(function (pill, i) {
+      var tl = timelines[i];
+      if (!tl) return;
+
+      if (pill.classList.contains('is-active')) {
+        if (activeTweens[i]) activeTweens[i].kill();
+        activeTweens[i] = tl.tweenTo(tl.duration(), {
+          duration: 0.4,
+          ease: ease,
+          overwrite: 'auto'
+        });
+      } else {
+        if (!pill.matches(':hover')) {
+          if (activeTweens[i]) activeTweens[i].kill();
+          activeTweens[i] = tl.tweenTo(0, {
+            duration: 0.3,
+            ease: ease,
+            overwrite: 'auto'
+          });
+        }
+      }
     });
   }
 
@@ -116,15 +145,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     layout();
+    updateActivePill();
   }
 
   initPills();
+
+  window.addEventListener('pagechange', updateActivePill);
 
   // Debounced resize
   var resizeTimer;
   window.addEventListener('resize', function () {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(layout, 150);
+    resizeTimer = setTimeout(function () {
+      layout();
+      updateActivePill();
+    }, 150);
   });
 
   // ---- Mobile menu ----

@@ -12,22 +12,37 @@
 /* ----- CARD BASE ----- */
 .magic-bento-card {
   position: relative;
-  background: var(--neutral-200);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 16px;
   padding: 24px;
   overflow: hidden;
-  transition: background 0.3s;
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   will-change: transform;
   cursor: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 180px;
-  border: 1px solid var(--neutral-400);
+  border: 1px solid rgba(146, 144, 195, 0.22);
 }
 
 .magic-bento-card:hover {
-  background: var(--neutral-300);
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(146, 144, 195, 0.4);
+  box-shadow: 0 20px 40px rgba(17, 24, 68, 0.05);
+}
+
+[data-theme="dark"] .magic-bento-card {
+  background: rgba(27, 26, 85, 0.3);
+  border: 1px solid rgba(146, 144, 195, 0.15);
+}
+
+[data-theme="dark"] .magic-bento-card:hover {
+  background: rgba(27, 26, 85, 0.55);
+  border-color: rgba(146, 144, 195, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* ----- GRID PLACEMENTS ----- */
@@ -179,6 +194,129 @@
   );
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+
+/* ----- VISUAL STATS & DECORATIONS ----- */
+.bento-stat-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--text-primary), var(--neutral-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4px;
+  letter-spacing: -2px;
+}
+
+[data-theme="dark"] .bento-stat-num {
+  background: linear-gradient(135deg, #FFF, var(--neutral-300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bento-stat-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.bento-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.bento-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(146, 144, 195, 0.12);
+  color: var(--text-primary);
+  border: 1px solid rgba(146, 144, 195, 0.2);
+  transition: all 0.3s ease;
+}
+
+.bento-tag:hover {
+  background: var(--neutral-700);
+  color: #FFF;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .bento-tag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .bento-tag:hover {
+  background: var(--neutral-850, #9290C3);
+  color: var(--dark-navy);
+}
+
+.bento-edu-meta {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* Pulsing Status Badge inside Bento */
+.bento-pulse-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.10);
+  border: 1px solid rgba(16, 185, 129, 0.30);
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.bento-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10B981;
+  border-radius: 50%;
+  position: relative;
+}
+
+.bento-pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #10B981;
+  animation: pulseGreen 1.8s ease-in-out infinite;
+}
+
+.bento-pulse-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #10B981;
+  letter-spacing: 0.5px;
+}
+
+.bento-card--collaborate {
+  border: 1px solid rgba(16, 185, 129, 0.25) !important;
+}
+
+.bento-card--collaborate:hover {
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1) !important;
 }
 
 /* ============================================
